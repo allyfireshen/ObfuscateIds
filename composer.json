@@ -1,0 +1,37 @@
+{
+  "name": "obfuscateids/obfuscateids",
+  "description": "Genernate the short,non-repeat,non-sequential string according the id number",
+  "keywords": [
+    "obfuscateids",
+    "obfuscateids",
+    "generatecode",
+    "invitecode",
+    "encode",
+    "decode"
+  ],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "JianNan Zhong",
+      "email": "243440735@qq.com"
+    },
+    {
+      "name": "allyfireshen",
+      "email": "allyfireshen@gmail.com"
+    }
+  ],
+  "require": {
+    "php": ">=5.6.0",
+    "ext-mbstring": "*"
+  },
+  "config": {
+    "preferred-install": "dist"
+  },
+  "autoload": {
+    "psr-4": {
+      "ObfuscateIds\\": "src/"
+    }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}
