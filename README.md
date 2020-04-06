@@ -45,4 +45,4 @@ The custom alphabet and the custom random can't have the same characters and num
 The primary purpose of ObfuscateIds is to obfuscate numeric ids. It's **not** meant or tested to be used as a security or compression tool. Having said that, this algorithm does try to make these ids random and unpredictable.
 
 ## License
-MIT License. See the [LICENSE](LICENSE) file. You can use Hashids in open source projects and commercial products. Don't break the Internet. Kthxbye.
+MIT License. See the [LICENSE](LICENSE) file. You can use ObfuscateIds in open source projects and commercial products.
