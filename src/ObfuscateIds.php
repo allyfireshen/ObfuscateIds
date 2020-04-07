@@ -44,7 +44,7 @@ class ObfuscateIds
      */
     protected $rules;
 
-    public function __construct($alphabet = "C7YQTHLKRGW6F8AMNB42EVXJ",$random = "5DPU3",$length = 6)
+    public function __construct($alphabet = "C7YQTHLKRGW6F8AMNB42EVXJ", $random = "5DPU3", $length = 6)
     {
         $alphabet = \mb_convert_encoding($alphabet, 'UTF-8', \mb_detect_encoding($alphabet));
         $this->alphabet = \implode("", \array_unique($this->multiByteSplit($alphabet)));
@@ -74,7 +74,7 @@ class ObfuscateIds
      * @param number $number
      * @return string
      */
-    public function encode($number)
+    public function encode($number) : string
     {
         $ret = "";
         $size = $this->size;
@@ -82,7 +82,6 @@ class ObfuscateIds
 
         if (!\is_numeric($number)) {
             throw new ObfuscateIdsException("Please enter the the digit!");
-//            return $ret;
         } else {
             $number = \intval($number);
         }
@@ -117,10 +116,11 @@ class ObfuscateIds
 
     /**
      * Decode the code
-     * @param string $code
+     * @param $code
      * @return float|int
      */
-    public function decode($code) {
+    public function decode($code)
+    {
         $number = 0;
         $ret_array = [];
         $key_list = [];
@@ -156,7 +156,8 @@ class ObfuscateIds
      * Get the random string according to the random
      * @return mixed
      */
-    protected function getRandomString() {
+    protected function getRandomString()
+    {
         $random = $this->random;
         $random_array = \str_split($random);
         return $random_array[\rand(0, sizeof($random_array) - 1)];
@@ -167,7 +168,8 @@ class ObfuscateIds
      * @param number $decNum
      * @return string
      */
-    protected function convert($decNum) {
+    protected function convert($decNum) : string
+    {
         $alphabet = $this->alphabet;
         $size = \mb_strlen($alphabet);
         $alphabetArray = \str_split($alphabet);
@@ -186,9 +188,8 @@ class ObfuscateIds
      * @param  string $var
      * @return array
      */
-    protected function multiByteSplit($var)
+    protected function multiByteSplit($var) : array
     {
-        $array = \preg_split('/(?!^)(?=.)/', $var) ? : [];
-        return $array;
+        return \preg_split('/(?!^)(?=.)/', $var) ? : [];
     }
 }
